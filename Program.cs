@@ -27,8 +27,15 @@ namespace _01_12___Atributos_e_M_todos
             switch (escolha)
             {
                 case 1:
+                AvancarPrimeiro();
+                break;
 
-                
+                case 2:
+
+                break;
+
+                case 3:
+
                 break;
             }
 
@@ -42,6 +49,78 @@ namespace _01_12___Atributos_e_M_todos
 
 
             //Métodos
+            
+            void AvancarPrimeiro(){
+                primeiroPersonagem.avançar = true;
+                if(segundoPersonagem.defesa == true){
+                if(segundoPersonagem.organização <= 1){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} conseguímos derrotar o inimigo!");
+                }else if(segundoPersonagem.organização <= 2){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} só nos resta mais uma vitória para expulsarmos o inimigo!");
+                    segundoPersonagem.organização = 2 - 1;
+                }else if(segundoPersonagem.organização <= 3){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} Vitória! o inimigo foi forçado a recuar perante nosso avanço!");
+                }
+                }
+                if(segundoPersonagem.envelopar == true){
+                    Console.WriteLine($"Infelizmente o inimigo conseguiu sobreviver a vosso ataque.");
+                }
+                if(segundoPersonagem.avançar == true){
+                if(segundoPersonagem.habilidade > primeiroPersonagem.habilidade){
+                    Console.WriteLine($"O comandante inimigo foi capaz de deter nosso ataque!");
+                }else if(segundoPersonagem.habilidade <= primeiroPersonagem.habilidade){
+                    if(segundoPersonagem.organização <= 1){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} conseguímos derrotar o inimigo!");
+                }else if(segundoPersonagem.organização <= 2){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} só nos resta mais uma vitória para expulsarmos o inimigo!");
+                    segundoPersonagem.organização = 2 - 1;
+                }else if(segundoPersonagem.organização <= 3){
+                    Console.WriteLine($"Comandante {primeiroPersonagem.nome} Vitória! o inimigo foi forçado a recuar perante nosso avanço!");
+                }
+                }
+                }
+            }
+            void AvancarSegundo(){
+                segundoPersonagem.avançar = true;
+                if(primeiroPersonagem.defesa == true){
+                if(primeiroPersonagem.organização <= 1){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} conseguímos derrotar o inimigo!");
+                }else if(primeiroPersonagem.organização <= 2){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} só nos resta mais uma vitória para expulsarmos o inimigo!");
+                    primeiroPersonagem.organização = 2 - 1;
+                }else if(primeiroPersonagem.organização <= 3){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} Vitória! o inimigo foi forçado a recuar perante nosso avanço!");
+                }
+                }
+                if(primeiroPersonagem.envelopar == true){
+                    Console.WriteLine($"Infelizmente o inimigo conseguiu sobreviver a vosso ataque.");
+                }
+                if(primeiroPersonagem.avançar == true){
+                if(primeiroPersonagem.habilidade > segundoPersonagem.habilidade){
+                    Console.WriteLine($"O comandante inimigo foi capaz de deter nosso ataque!");
+                }else if(primeiroPersonagem.habilidade <= segundoPersonagem.habilidade){
+                    if(primeiroPersonagem.organização <= 1){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} conseguímos derrotar o inimigo!");
+                }else if(primeiroPersonagem.organização <= 2){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} só nos resta mais uma vitória para expulsarmos o inimigo!");
+                    primeiroPersonagem.organização = 2 - 1;
+                }else if(primeiroPersonagem.organização <= 3){
+                    Console.WriteLine($"Comandante {segundoPersonagem.nome} Vitória! o inimigo foi forçado a recuar perante nosso avanço!");
+                }
+                }
+                }
+            }
+            
+            
+
+            void Turno(){
+            switch (turno)
+            {
+                case 1:
+                break;
+            }
+            }
+
             void Primeiro()
             {
 
@@ -55,6 +134,9 @@ namespace _01_12___Atributos_e_M_todos
                 primeiroPersonagem.exercito = "Exército 1";
                 //valores escondidos
                 primeiroPersonagem.organização = 3;
+                primeiroPersonagem.avançar = false;
+                primeiroPersonagem.defesa = false;
+                primeiroPersonagem.envelopar = false;
                 Console.WriteLine("Gostaria de verificar as informações de seu personagem? s/n?");
                 string res = Console.ReadLine();
 
@@ -93,6 +175,9 @@ namespace _01_12___Atributos_e_M_todos
                 segundoPersonagem.exercito = "Exército 2";
                 //valores escondidos
                 segundoPersonagem.organização = 3;
+                segundoPersonagem.avançar = false;
+                segundoPersonagem.defesa = false;
+                segundoPersonagem.envelopar = false;
                 Console.WriteLine("Gostaria de verificar as informações de seu personagem? s/n?");
                 string res = Console.ReadLine();
 
@@ -117,11 +202,6 @@ namespace _01_12___Atributos_e_M_todos
                     System.Threading.Thread.Sleep(2000);
                 }
             }
-
+        }
         }
     }
-
-    class Program : NewBaseType
-    {
-    }
-}

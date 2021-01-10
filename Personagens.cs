@@ -11,20 +11,11 @@ namespace _01_12___Atributos_e_M_todos
         public string exercito;
         public int organização;
         
-        public int avancar(){
+        public bool avançar;
 
-        return organização-1;
+        public bool defesa;
 
-        }
-        public int envelopar(){
-
-        return organização-1; 
-        
-        }
-        public int defesa(){
-        
-        return organização-1;
-
+        public bool envelopar;
         }
 }
 }
